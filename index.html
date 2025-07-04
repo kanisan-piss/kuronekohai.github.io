@@ -19,6 +19,74 @@ a:hover{
   color: #fff;
 }
         .main{font-style: italic;}
+        .qa-7 {
+    max-width: 500px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 2%), 0 2px 3px -2px rgba(0 0 0 / 5%);
+    background-color: #fff;
+}
+
+.qa-7 summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em 2em 1em 3em;
+    color: #000000;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.qa-7 summary::before,
+.qa-7 p::before {
+    position: absolute;
+    left: 1em;
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+.qa-7 summary::before {
+    color: #75bbff;
+    content: "Q";
+}
+
+.qa-7 summary::after {
+    transform: translateY(-25%) rotate(45deg);
+    width: 7px;
+    height: 7px;
+    margin-left: 10px;
+    border-bottom: 3px solid #000000b3;
+    border-right: 3px solid #000000b3;
+    content: '';
+    transition: transform .5s;
+}
+
+.qa-7[open] summary::after {
+    transform: rotate(225deg);
+}
+
+.qa-7 p {
+    position: relative;
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    padding: .3em 3em 1.5em;
+    color: #333;
+    transition: transform .5s, opacity .5s;
+}
+
+.qa-7[open] p {
+    transform: none;
+    opacity: 1;
+}
+
+.qa-7 p::before {
+    color: #ff8d8d;
+    line-height: 1.2;
+    content: "A";
+}
    </style>    
 </head>
 
@@ -26,10 +94,10 @@ a:hover{
     <p>黒猫杯へようこそ!</p>
 <a href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12256015397"> entry</a>
     <p>例題↓</p>
-    <div class="main">
-        <p>たつき諒によると、今年（2025年）のサラダ記念日はやってくる？
-→くる（7月5日の災害後も時は進むので）</p>
-    </div>
+   <details class="qa-7">
+    <summary>たつき諒によると、今年（2025年）のサラダ記念日はやってくる？</summary>
+    <p>くる（7月5日の災害後も時は進むので）</p>
+</details>
     </br>
  <p>あなたは</p>
    <img src="http://www5.kannet.ne.jp/~counter/count.cgi?name=kuronekohai01&type=1&width=6">
